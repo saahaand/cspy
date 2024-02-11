@@ -1,36 +1,15 @@
-from setuptools import find_packages, setup
-from setuptools.dist import Distribution
-from setuptools.command.install import install
-
-
-class BinaryDistribution(Distribution):
-
-    def is_pure(self):
-        return False
-
-    def has_ext_modules(self):
-        return True
-
-
-class InstallPlatlib(install):
-
-    def finalize_options(self):
-        install.finalize_options(self)
-        self.install_lib = self.install_platlib
-
+from setuptools import setup, find_packages
 
 setup(
-    name='@PROJECT_NAME@',
-    version='@PROJECT_VERSION@',
-    author='S. Ahari',
-    author_email='\"Sahand Ahari\" <s.asgharieh.ahari@rug.nl>',
+    name='cspy',
+    version='1.0.0',
+    author='Sahand',
+    author_email='s.asgharieh.ahari@rug.nl',
     url='https://github.com/saahaand/cspy',
-    description='(Resource) Constrained  Shortest Path algorithms in Python',
-    distclass=BinaryDistribution,
-    cmdclass={'install': InstallPlatlib},
+    description='Modified version of cspy by Mat',
     packages=find_packages(),
     package_data={
-        '@PROJECT_NAME@': ['.libs/*', 'algorithms/*'],
+        'cspy': ['.libs/*', 'algorithms/*'],
     },
     include_package_data=True,
     install_requires=['networkx', 'numpy'],
