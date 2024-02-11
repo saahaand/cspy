@@ -21,7 +21,7 @@ class InstallPlatlib(install):
 
 
 setup(
-    name='cspy',
+    name='cspy_saahaand',
     version='1.0.0',
     author='Sahand',
     author_email='s.asgharieh.ahari@rug.nl',
